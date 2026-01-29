@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://saigonrace.netlify.app/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Bộ sưu tập -->
+  <url>
+    <loc>https://saigonrace.netlify.app/bst-hw.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://saigonrace.netlify.app/bst-tmc.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://saigonrace.netlify.app/bst-mjr.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://saigonrace.netlify.app/bst-p-race.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Shop -->
+  <url>
+    <loc>https://saigonrace.netlify.app/sale-bst.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://saigonrace.netlify.app/tl-bst.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Info -->
+  <url>
+    <loc>https://saigonrace.netlify.app/about-bst.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://saigonrace.netlify.app/contact-bst.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="bOA04aZzE0Dfyl51Csl9tyfzBsd1rOqKH0-POO8LByI" />
+    <title>HPVA_Saigon race Collectibles_Hotwheels</title>
+    <link rel="icon" href="img\SGRACE\Thiết kế chưa có tên.png" type="image/png" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        :root {
+            --ink: #1e3f3f;
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--ink);
+            background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Cline x1="0" y1="0" x2="0" y2="40" stroke="%23ccc" stroke-width="1" /%3E%3Cline x1="0" y1="0" x2="40" y2="0" stroke="%23ccc" stroke-width="1" /%3E%3C/svg%3E') repeat;
+            /* để footer dính đáy khi trang ngắn */
+            
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-title {
+            color: #1e3f3f;
+            font-family: comfortaa;
+            font-size: medium;
+        }
+        /* ===== FULL BROWSER HERO ===== */
+        
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 32px 56px;
+        }
+        /* ===== NAVBAR ===== */
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+        
+        .logo {
+            font-weight: 700
+        }
+        
+        .menu {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: inherit;
+            opacity: .65;
+            position: relative;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown > a {
+            display: inline-block;
+            padding-bottom: 8px;
+            /* tạo vùng hover đệm */
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #e3e2de;
+            border: 1px solid rgba(0, 0, 0, .1);
+            padding: 12px 0;
+            min-width: 160px;
+            display: none;
+            z-index: 10;
+        }
+        /* MỞ DROPDOWN KHI HOVER CẢ KHỐI */
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            display: block;
+            padding: 8px 20px;
+            text-decoration: none;
+            color: inherit;
+            white-space: nowrap;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(0, 0, 0, .04);
+        }
+        /* ===== MAIN ===== */
+        
+        .main {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            align-items: center;
+        }
+        
+        .title {
+            font-size: 88px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        /* ===== SIDEBAR (MOBILE ONLY) ===== */
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 260px;
+            height: 100vh;
+            background-color: #e3e2de;
+            padding: 32px;
+            transform: translateX(-100%);
+            transition: transform .3s ease;
+            z-index: 100;
+        }
+        
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        
+        .sidebar a {
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: var(--ink);
+            font-size: 14px;
+        }
+        
+        .sidebar-dropdown {
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-toggle {
+            all: unset;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 8px 0;
+            color: var(--ink);
+        }
+        
+        .sidebar-toggle span {
+            opacity: .5;
+        }
+        
+        .sidebar-sub {
+            display: none;
+            padding-left: 12px;
+            margin-top: 8px;
+        }
+        
+        .sidebar-sub a {
+            display: block;
+            font-size: 13px;
+            opacity: .7;
+            margin-bottom: 12px;
+        }
+        /* mở dropdown */
+        
+        .sidebar-dropdown.active .sidebar-sub {
+            display: block;
+        }
+        /* Overlay */
+        
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(30, 63, 63);
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s;
+            z-index: 90;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .overlay.active {
+            display: block
+        }
+        
+        .overlay.active {
+            display: block
+        }
+        /* ===== MAIN LAYOUT ===== */
+        
+        .main {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            align-items: center;
+        }
+        
+        .left {
+            padding-top: 40px
+        }
+        
+        .credit {
+            font-size: 12px;
+            opacity: .5;
+            margin-bottom: 32px;
+        }
+        
+        .title {
+            font-size: 88px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 32px;
+        }
+        
+        .desc {
+            font-size: 14px;
+            line-height: 1.7;
+            opacity: .7;
+            max-width: 340px;
+            margin-bottom: 36px;
+        }
+        
+        .desc::after {
+            content: "|";
+            margin-left: 2px;
+            animation: blink 1s infinite;
+            opacity: .6;
+        }
+        
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1
+            }
+            50.01%,
+            100% {
+                opacity: 0
+            }
+        }
+        
+        .stats {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: .6;
+        }
+        
+        .cta {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #1e3f3f;
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .right {
+            position: relative;
+            height: 100%;
+        }
+        /* ảnh chung */
+        
+        .hero-img {
+            position: absolute;
+            object-fit: contain;
+        }
+        /* từng ảnh tự do hoàn toàn */
+        
+        .car {
+            width: 420px;
+            right: 40px;
+            bottom: 40px;
+        }
+        
+        .box {
+            width: 220px;
+            right: 380px;
+            bottom: 60px;
+            opacity: .85;
+        }
+      /* ===== FOOTER ===== */
+    footer{
+      margin-top:auto;
+      border-top:1px solid rgba(30, 63, 63);
+      padding:32px 56px;
+      font-size:13px;
+    }
+
+    .footer-wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:40px;
+    }
+
+    .footer-brand{
+      max-width:260px;
+    }
+
+    .footer-brand strong{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:32px;
+    }
+
+    .footer-links a{
+      text-decoration:none;
+      color:inherit;
+      opacity:.6;
+    }
+
+    .footer-links a:hover{opacity:1}
+
+    .copyright{
+      margin-top:16px;
+      font-size:12px;
+      opacity:.45;
+    }
+
+    @media(max-width:1024px){
+      .main{grid-template-columns:1fr}
+      .right{display:none}
+      .title{font-size:64px}
+
+      footer{padding:24px}
+      .footer-wrap{flex-direction:column}
+    }
+        /* ===== RESPONSIVE ===== */
+        
+        @media(min-width:768px) {
+            .menu-toggle {
+                display: none
+            }
+            .sidebar,
+            .overlay {
+                display: none
+            }
+        }
+        
+        @media(max-width:767px) {
+            .menu, .icons {
+                display: none
+            }
+            .menu-toggle {
+                display: block
+            }
+        }
+        
+        .nav-search {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-search input {
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, .25);
+            background: transparent;
+            padding: 6px 4px;
+            font-size: 13px;
+            font-family: inherit;
+            color: var(--ink);
+            width: 140px;
+            outline: none;
+        }
+        
+        .nav-search input::placeholder {
+            color: rgba(0, 0, 0, .4);
+        }
+        
+        .nav-search input:focus {
+            border-bottom-color: var(--ink);
+        }
+        
+        .search-icon {
+            font-size: 30px;
+            opacity: .5;
+            margin-right: 6px;
+        }
+
+        /* ===== FOOTER MOBILE FIX ===== */
+@media (max-width: 576px){
+
+  footer{
+    padding: 20px 16px; /* giảm padding ngang */
+  }
+
+  .footer-wrap{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-brand{
+    max-width: 100%;
+    font-size: 13px;
+  }
+
+  .footer-brand strong{
+    font-size: 15px;
+  }
+
+  .footer-links{
+    flex-wrap: wrap;        /* cho xuống dòng */
+    gap: 16px 20px;
+    font-size: 12px;
+  }
+
+  .footer-links a{
+    opacity: .7;
+  }
+
+  .copyright{
+    font-size: 11px;
+    margin-top: 12px;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <a href="home.html">Trang chủ</a>
+
+        <div class="sidebar-dropdown">
+            <button class="sidebar-toggle" onclick="toggleSidebarDropdown(this)">
+      Bộ sưu tập <i class="bi bi-caret-down-fill"></i><span>▾</span>
+    </button>
+            <div class="sidebar-sub">
+                <a href="bst-hw.html">Hotwheels</a>
+                        <a href="bst-tmc.html">Tomica</a>
+                        <a href="bst-mjr.html">Majorette</a>
+                        <a href="bst-p-race.html">Poprace</a>
+<a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+            </div>
+        </div>
+
+        <div class="sidebar-dropdown">
+            <button class="sidebar-toggle" onclick="toggleSidebarDropdown(this)">
+      Shop <i class="bi bi-caret-down-fill"></i><span>▾</span>
+    </button>
+            <div class="sidebar-sub">
+                <a href="sale-bst.html">Bán</a>
+                <a href="tl-bst.html">Thanh lý</a>
+                <a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+            </div>
+        </div>
+        <a href="contact-bst.html">Contact</a>
+        <a href="about-bst.html">About</a>
+    </div>
+
+    
+
+        <section class="hero"><!-- NAVBAR -->
+        <div class="nav">
+            <div class="logo" style="font-size: larger;">
+                <a href="home.html"><img src="img\SGRACE\avt2.png" alt="logo" width="100" class="me-2">
+                </a>
+            </div>
+
+            <div class="menu">
+                <a href="home.html">Trang chủ</a>
+
+                <div class="dropdown">
+                    <a href="#">Bộ sưu tập ▾</a>
+                    <div class="dropdown-content">
+                        <a href="bst-hw.html">Hotwheels</a>
+                        <a href="bst-tmc.html">Tomica</a>
+                        <a href="bst-mjr.html">Majorette</a>
+                        <a href="bst-p-race.html">Poprace</a>
+<a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#">Shop ▾</a>
+                    <div class="dropdown-content">
+                        <a href="sale-bst.html">Bán</a>
+                <a href="tl-bst.html">Thanh lý</a>
+                <a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+                    </div>
+                </div>
+                <a href="contact-bst.html">Contact</a>
+                <a href="about-bst.html">About</a>
+            </div>
+
+            <div>
+
+                <form class="nav-search" action="https://www.google.com/search" method="GET" target="_blank">
+                    <span class="search-icon">⌕</span>
+                    <input type="text" name="q" placeholder="Search Google…" required />
+                </form>
+
+            </div>
+
+            <div class="overlay" onclick="toggleMenu()"></div>
+            <div class="menu-toggle " style="font-size: xx-large;" onclick="toggleMenu()">☰</div>
+        </div>
+
+        
+        <div class="py-5">
+            <h1 style="font-family: Space Mono;" title="xuất xứ: Mỹ; Nhà sản xuất: Mattel">HOT WHEELS</h1>
+            <br>
+            <div class="row g-4">
+
+                <!-- Card #001 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965538497_d3f15aff2157ae4f9e9933205a0f0f42.jpg" alt="Honda City Turbo II">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Honda City Turbo II <img src="img\SGRACE\TH.png" alt="text" width="30"></h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Honda City Turbo II [TH]', '1:64', 'Error model (lỗi sản xuất)', 'Malaysia','','','69.000','25.000','001')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#001</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card #002 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965534483_e62e0b3765cbc992a5bdd0e6394e9b47.jpg" alt="1988 Jeep Wagoneer">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">1988 Jeep Wagoneer</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('1988 Jeep Wagoneer', '1:64', 'Peeling decal (bong decal)', 'Malaysia','','','69.000','40.000','002')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#002</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card #003 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965544495_1c46c7da1feacddeaf91298ccc393465.jpg" alt="Mighty K">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Mighty K</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Mighty K', '1:64', 'Peeling decal (bong decal)', 'Malaysia','','','69.000','50.000','003')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#003</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card #004 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965537025_5959dc4daddca5b05d8b1b833f20c77c.jpg" alt="1971 Ford Mustang Mach 1">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">1971 Ford Mustang Mach 1</h5>
+                            <p class="card-text text-muted">SILVER SERIES</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('1971 Ford Mustang Mach 1', '1:64', 'Đã tháo gầm, chưa độ', 'Thailand','','','69.000','50.000','004')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#004</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card #005 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\vw Baja Bug.jpg" alt="Volkswagen 'Baja Bug'">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Volkswagen "Baja Bug"</h5>
+                            <p class="card-text text-muted">SILVER SERIES</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Volkswagen Baja Bug', '1:64', 'rã sơn', 'Malaysia','Volkswagen Baja Bug là phiên bản độ lại của xe Volkswagen Beetle, thiết kế dành cho off-road và đua sa mạc Baja.','','69.000','50.000','005')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#005</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card #006 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965542334_b21e920aa9dfabb4467e26609b62527c.jpg" alt="Jaguar MK1">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Jaguar MK1</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Jaguar MK1', '1:64', 'Peeling decal (bong decal)', 'Malaysia','','','69.000','30.000','006')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#006</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card #007 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965541427_043874d1cb01f718a48991ecd38daced.jpg" alt="Datsun Sunny Truck [Nissan]">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Datsun Sunny Truck [Nissan]</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Datsun Sunny Truck [Nissan]', '1:64', 'Chipped paint (tróc sơn)', 'Malaysia','','','69.000','30.000','007')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#007</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card #008-#027 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965542536_b62e3da4c1214a87de9e3f0d74464395.jpg" alt="Aston Martin DB4GT High-Speed Edition">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Aston Martin DB4GT High-Speed Edition</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Aston Martin DB4GT High-Speed Edition', '1:64', 'Peeling decal (bong decal)', 'Malaysia','','','69.000','30.000','008')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#008</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965550001_7e08fd84b5e0e1e3a781d4e5760b9c24.jpg" alt="Morgan Super 3">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Morgan Super 3</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Morgan Super 3', '1:64', 'Tróc decal và sơn', 'Malaysia','','','69.000','20.000','009')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#009</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\SGRACE\Thiết kế chưa có tên.png" alt="Mazda Repu">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Mazda Repu</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Mazda Repu [HW]', '1:64', 'Đã bán $', 'Malaysia','','','69.000','60.000','010')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#010</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965535205_22016777646f6f50c52fdd698d3e5ca3.jpg" alt="'81 Toyota Starlet">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">'81 Toyota Starlet</h5>
+                            <p class="card-text text-muted">ULTRA HOT</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('\'81 Toyota Starlet', '1:64', 'Peeling decal (bong decal)', 'Malaysia','','','69.000','50','011')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#011</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965541139_e53a3c415f669a7802211f4da9c1af9f.jpg" alt="Hirohata Merc">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Hirohata Merc</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Hirohata Merc', '1:64', 'Peeling decal (bong decal)', 'Malaysia','','','69.000','50.000','012')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#012</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6336840133270_004_27abcf0c7738e827f7dd8b9bd494649a.jpg" alt="Hi-Roller II">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Hi-Roller II <img src="img\SGRACE\STH.png" alt="text" width="30"></h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Hi-Roller II [STH]', '1:64', 'đã bán $', 'Malaysia','','','69.000','30.000','013')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#013</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965541849_3ecad151f3e2df6b5c8d9faa9f462054.jpg" alt="Dimachinni Veloce™">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Dimachinni Veloce™</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Dimachinni Veloce™', '1:64', 'Peeling decal (bong decal), đã bán $', 'Malaysia','','','69.000','30.000','014')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#014</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965536671_46b3ec90217c7753fe29467c68a5ebea.jpg" alt="Volkswagen T3 Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Volkswagen T3 Custom</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Volkswagen T3 Custom', '1:64', 'Chipped paint (tróc sơn), không bán $', 'Malaysia','','','69.000','40.000','015')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#015</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965535618_8c376a573ed240fe782ad7ac6fa72b04.jpg" alt="'68 Dodge Dart">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">'68 Dodge Dart</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('\'68 Dodge Dart', '1:64', 'Like new (đã unbox nhưng nguyên trạng), Peeling decal (bong decal)', 'Malaysia','','','69.000','40.000','016')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#016</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\SGRACE\Thiết kế chưa có tên.png" alt="Custom small block ™">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Custom small block ™</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Custom small block ™', '1:64', 'Mất chi tiết (có thể dùng lego thế)', 'Malaysia','','','69.000','30.000','017')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#017</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965549081_cdd229fc2126bdd7ce11eb385fbc9a3c.jpg" alt="Hako Type D ™">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Hako Type D ™</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Hako Type D ™', '1:64', 'Peeling decal (bong decal)', 'Malaysia','','','69.000','50.000','018')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#018</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965540660_97b6c5a09f3fad92b18be40233c2a410.jpg" alt="67 Chevy C10™ CM">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">67 Chevy C10™ CM</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('67 Chevy C10™ CM', '1:64', 'Like new (đã unbox nhưng nguyên trạng)', 'Malaysia','','','69.000','60.000','019')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#019</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6632965545177_2126594ce4a18f00e023ad7396e6a389.jpg" alt="F-150 SVT Lightning [Ford]">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">F-150 SVT Lightning [Ford]</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('F-150 SVT Lightning [Ford]', '1:64', 'Peeling decal (bong decal)', 'Malaysia','','','69.000','50.000','020')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#020</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6643816774215_eb50d3247fce77409faa89591280cbc6.jpg" alt="60'S Flat 500D Modificado">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">60'S Flat 500D Modificado</h5>
+                            <p class="card-text text-muted">SILVER SERIES</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('60\'S Flat 500D Modificado', '1:64', 'Chipped paint (tróc sơn), KHÔNG bán $, đã có custom', 'Indonesia','','','69.000','59.000','021')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#021</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6645150690350_c9ce05bb218026e96a299147c0543cfe.jpg" alt="Toyota Land Cruiser">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Toyota Land Cruiser</h5>
+                            <p class="card-text text-muted">ANNIVERSARY</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Toyota Land Cruiser', '1:64', 'Like new (đã unbox nhưng nguyên trạng), Đã bán $', 'Indonesia','119.000','','69.000','40.000','022')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#022</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6666495880090_15dd766ae76d48e947e17a3fb359c0bd.jpg" alt="Chevy® EL CAMINO™ [FORD]">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Chevy® EL CAMINO™ [FORD]</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Chevy® EL CAMINO™ [FORD]', '1:64', 'Like new (đã unbox nhưng nguyên trạng), KHÔNG bán $', 'Malaysia','','','69.000','40.000','023')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#023</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6666495896717_6ce3d8e21917d506f49a274e40d7fc6d.jpg" alt="1967 EL CAMINO™ [FAST_&_FURIOUS]">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">1967 EL CAMINO™ [FAST_&_FURIOUS]</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('1967 EL CAMINO™ [FAST_&_FURIOUS]', '1:64', 'Like new Chipped paint (tróc sơn), đã bán $', 'Malaysia','','','69.000','40.000','024')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#024</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\1966 Bulck Riviera™ GM.jpg" alt="1966 Bulck Riviera™ GM">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">1966 Bulck Riviera™ GM</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('1966 Bulck Riviera™ GM', '1:64', 'Like new (đã unbox nhưng nguyên trạng),', 'Malaysia','','','69.000','60.000','025')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#025</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7402510407248_93aaa851aadd26f8524efee4234cb57c.jpg" alt="'15 Land Rover Defender Double Cab">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">'15 Land Rover Defender Double Cab</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('\'15 Land Rover Defender Double Cab', '1:64', 'Like new (đã unbox nhưng nguyên trạng), KHÔNG bán $', 'Malaysia','','','69.000','60.000','026')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#026</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7402510430730_7003fd4bac11505237c8f02982468ddf.jpg" alt="Land Rover Defender 90">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Land Rover Defender 90</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Land Rover Defender 90', '1:64', 'Like new (đã unbox nhưng nguyên trạng), đã bán $', 'Malaysia','','','69.000','40.000','027')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#027</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6742414013138_46fb4246466c9db9e0aa570abb15ae5c.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Honda Civic Custom</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Honda Civic Custom', '1:64', 'bong chóc decal 80%', 'Malaysia','','','69.000','54.000','028')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#028</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vì số lượng quá dài, mình có thể hoàn thiện full 27 card thành 1 file HTML sẵn để bạn copy toàn bộ. -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7302302090357_80e081a4828d7ff7d93fb567723c9a40.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Autin Mini Cooper S</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Autin Mini Cooper S [Mới]', '1:64', 'Like new (đã unbox nhưng nguyên trạng), KHÔNG bán $', 'Malaysia','','','','','029')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#029</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7307936018814_8ac954ec283c40d6d8cc99c9269cb64f.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">CUPRA e-Racer</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('CUPRA e-Racer [Mới]', '1:64', 'Like new (đã unbox nhưng nguyên trạng), KHÔNG bán $', 'Malaysia','','','','','030')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#030</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7307936015919_49a98fd5c3433086b77a2c55f90af1ac.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Porsche Taycan Turbo S</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Porsche Taycan Turbo S [Mới]', '1:64', 'Like new (đã unbox nhưng nguyên trạng), KHÔNG bán $', 'Malaysia','','','','','031')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#031</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\20251209122114688.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Porsche 911 Turbo Cabriolet</h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Porsche 911 Turbo Cabriolet [Mới]', '1:64', 'Like new (đã unbox nhưng nguyên trạng), KHÔNG bán $', 'Malaysia','Porsche 911 Turbo Cabriolet là phiên bản mui trần (cabriolet) hiệu suất cao của dòng 911, nổi bật với động cơ boxer twin-turbo mạnh mẽ, hệ dẫn động bốn bánh, hộp số PDK nhanh chóng, và khả năng tăng tốc ấn tượng, mang đến trải nghiệm lái thể thao đỉnh cao với gió trời, có các phiên bản như Turbo và Turbo S với công suất khác nhau (Turbo S thường có công suất lớn hơn), được trang bị nhiều công nghệ tiên tiến của Porsche. ','','','','032')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#032</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7311294802768_a410e9f044401d64ff9423c7bdaa074a.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Mazda MX-5 </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Mazda MX-5 ', '1:64', 'bong decal, KHÔNG bán $', 'Malaysia','','','','','033')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#033</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7398944748083_44797bc338beb97ac12f56d0c4886e62.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Ford Mustang Mach-E 1400 </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Ford Mustang Mach-E 1400 ', '1:64', 'New, KHÔNG bán $', 'Malaysia','','','','','034')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#034</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7402305749752_6743f39e9cb548ff727013545be4838c.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Mazda RX-7 </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Mazda RX-7 ', '1:64', 'New, KHÔNG bán $', 'Malaysia','','','','','035')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#035</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7402305753547_3d79cd6634f415464375aee182cd3377.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">La Liebre™ </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('La Liebre™ ', '1:64', 'New, KHÔNG bán $', 'Malaysia','','','','0','036')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#036</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7311294802613_c4181b06ebd43381e2529cde7759c6b6.jpg" alt="DXT35 Custom Ford truck">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">DXT35 Custom Ford truck </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('DXT35 Custom Ford truck ', '1:64', 'New, KHÔNG bán $', 'Malaysia','','','','','037')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#037</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7122286201310_003_351cce38dc1afabec411036e0633c4e3.jpg" alt="DRIFT BOX™">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">DRIFT BOX </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('DRIFT BOX ', '1:64', 'bong decal, KHÔNG bán $', 'Malaysia','','','','','038')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#038</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6940576933844_12cb8841c75111ac7344156ea91bc835.jpg" alt="La Liebre™">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Mattel Dream Mobile™ </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Mattel Dream Mobile™ ', '1:64', 'Bong decal, KHÔNG bán $', 'Malaysia','','','','','039')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#039</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6940582864220_91d43e2c6671b4572f4ef2eaa3c974f1.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Audi 90 Quattro </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Audi 90 Quattro ', '1:64', 'Bong decal, KHÔNG bán $', 'Malaysia','','','','','040')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#040</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6940576910293_44dc3529e0d6aebede62d3abc74b17ec.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">'75 Chevy Blazer Custom </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('‛75 Chevy Blazer Custom ', '1:64', 'New, KHÔNG bán $', 'Malaysia','','','','0','041')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#041</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z6940576893343_14e97ffc1cd264ea6bbc92354e39ea86.jpg" alt="Honda Civic Custom">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Mazda RX-3 </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Mazda RX-3 ', '1:64', 'New, KHÔNG bán $', 'Malaysia','Mazda RX-3 (còn gọi là Mazda Savanna) là dòng coupe thể thao nhỏ gọn động cơ quay (rotary) sản xuất 1971-1978, nổi tiếng nhờ thành công trên đường đua và trở thành tiền thân của RX-7, được yêu thích bởi cộng đồng độ xe và drift (như Mad Mike Whiddett) với kiểu dáng cổ điển, động cơ mạnh mẽ và khả năng cạnh tranh, vẫn giữ vị thế huyền thoại trong làng xe JDM và xe cổ. ','','','0','042')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#042</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card shadow-sm">
+                        <img src="img\z7408990322184_2b8a01a1d5ec94ada5c892ecb2361373.jpg" alt="Nissan Skyline 2000">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Nissan Skyline 2000 </h5>
+                            <p class="card-text text-muted">BASIC</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-dark" onclick="showCarInfo('Nissan Skyline 2000 ', '1:64', 'New, KHÔNG bán $', 'Malaysia','','','','0','043')">
+                                        Xem thêm
+                                    </button>
+                                </div>
+                                <small class="text-body-dark">#043</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+            <button id="btnScrollTop" class="btn btn-dark btn-scroll-top" style="position: fixed; bottom: 40px; right: 40px; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+                ↑
+            </button>
+
+            <script>
+                /* ===== SCROLL TOP ===== */
+                const btnScrollTop = document.getElementById('btnScrollTop');
+
+                function adjustButtonPosition() {
+                    if (window.innerWidth <= 768) {
+                        btnScrollTop.style.bottom = '80px';
+                    } else {
+                        btnScrollTop.style.bottom = '40px';
+                    }
+                }
+
+                window.addEventListener('resize', adjustButtonPosition);
+                adjustButtonPosition();
+
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        btnScrollTop.style.opacity = '1';
+                        btnScrollTop.style.pointerEvents = 'auto';
+                    } else {
+                        btnScrollTop.style.opacity = '0';
+                        btnScrollTop.style.pointerEvents = 'none';
+                    }
+                });
+
+                btnScrollTop.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+
+
+                /* ===== SIDEBAR TOGGLE ===== */
+                const sidebar = document.getElementById('sidebar');
+
+                function toggleMenu() {
+                    sidebar.classList.toggle('active');
+                }
+
+
+                /* ===== SIDEBAR DROPDOWN ===== */
+                function toggleSidebarDropdown(btn) {
+                    const dropdown = btn.closest('.sidebar-dropdown');
+                    dropdown.classList.toggle('active');
+                }
+            </script>
+
+
+            <br>
+            <!-- FOOTER -->
+            <footer >
+                <div class="footer-wrap">
+                    <div class="footer-brand">
+                        <strong style="font-size: medium;">Saigon Race</strong> 1:64 Die-cast Collection · bộ sưu tập xe mô hình 1:64
+                        <div class="copyright">
+                            © 2024 Saigon Race.
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <a href="https://www.facebook.com/vinhan.huynhpham.1">Facebook</a>
+<a href="https://www.instagram.com/vinh_an_huynh_pham_001/">Instagram</a>
+<a href="https://zalo.me/0944835045">Zalo</a>
+<a href="contact-bst.html">Contact</a>
+                    </div>
+                </div>
+                <!-- Modal hiển thị thông tin -->
+                <div class="modal fade" id="carInfoModal" tabindex="-1" aria-labelledby="carInfoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="carInfoModalLabel" style="color: #1e3f3f;"><img src="img\SGRACE\biển1.png" alt="text" width="77" class="navbar-brand text-warning"> Thông tin xe</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                            </div>
+                            <div class="modal-body" id="carModalContent">
+                                <!-- Nội dung sẽ được thêm bằng JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            </div>
+            <script>
+                function toggleMenu() {
+                    sidebar.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                }
+
+                function toggleDropdown(e) {
+                    e.preventDefault();
+                    e.currentTarget.nextElementSibling.classList.toggle('show');
+                }
+
+                overlay.onclick = toggleMenu;
+            </script>
+            <script>
+                const el = document.getElementById('typewriter');
+                const text = el.dataset.text;
+                let index = 0;
+
+                function type() {
+                    if (index < text.length) {
+                        el.textContent += text.charAt(index);
+                        index++;
+                        setTimeout(type, 28); // tốc độ gõ
+                    }
+                }
+
+                type();
+            </script>
+            <script>
+                function toggleMenu() {
+                    sidebar.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                }
+
+                function toggleSidebarDropdown(btn) {
+                    btn.parentElement.classList.toggle('active');
+                }
+
+                overlay.onclick = toggleMenu;
+            </script>
+            <script>
+                const counters = document.querySelectorAll('.stat-number');
+
+                counters.forEach(counter => {
+                    const target = +counter.dataset.target;
+                    let current = 0;
+                    const step = Math.ceil(target / 60);
+
+                    const update = () => {
+                        current += step;
+                        if (current < target) {
+                            counter.textContent = current;
+                            requestAnimationFrame(update);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+
+                    update();
+                });
+            </script>
+
+            <script src="https://cdn.counter.dev/script.js" data-id="f457645d-3cd5-4919-8a2f-f3d87d6234f1" data-utcoffset="7"></script>
+            <script src="https://plugin-code.salesmartly.com/js/project_514093_530078_1761838458.js"></script>
+            <script src="info.js"></script>
+            <script>
+                function toggleSidebarDropdown(btn) {
+                    const dropdown = btn.closest('.sidebar-dropdown');
+                    dropdown.classList.toggle('active');
+                }
+            </script>
+
+</body>
+
+</html>

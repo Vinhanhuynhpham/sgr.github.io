@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="bOA04aZzE0Dfyl51Csl9tyfzBsd1rOqKH0-POO8LByI" />
+    <title>HPVA_Saigon race Collectibles_About</title>
+    <link rel="icon" href="img\SGRACE\Thiết kế chưa có tên.png" type="image/png" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        :root {
+            --ink: #1e3f3f;
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--ink);
+            background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Cline x1="0" y1="0" x2="0" y2="40" stroke="%23ccc" stroke-width="1" /%3E%3Cline x1="0" y1="0" x2="40" y2="0" stroke="%23ccc" stroke-width="1" /%3E%3C/svg%3E') repeat;
+            /* để footer dính đáy khi trang ngắn */
+            
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* ===== FULL BROWSER HERO ===== */
+        
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 32px 56px;
+        }
+        /* ===== NAVBAR ===== */
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+        
+        .logo {
+            font-weight: 700
+        }
+        
+        .menu {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: inherit;
+            opacity: .65;
+            position: relative;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown > a {
+            display: inline-block;
+            padding-bottom: 8px;
+            /* tạo vùng hover đệm */
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #e3e2de;
+            border: 1px solid rgba(0, 0, 0, .1);
+            padding: 12px 0;
+            min-width: 160px;
+            display: none;
+            z-index: 10;
+        }
+        /* MỞ DROPDOWN KHI HOVER CẢ KHỐI */
+        
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            display: block;
+            padding: 8px 20px;
+            text-decoration: none;
+            color: inherit;
+            white-space: nowrap;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(0, 0, 0, .04);
+        }
+        /* ===== MAIN ===== */
+        
+        .main {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            align-items: center;
+        }
+        
+        .title {
+            font-size: 88px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        /* ===== SIDEBAR (MOBILE ONLY) ===== */
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 260px;
+            height: 100vh;
+            background-color: #e3e2de;
+            padding: 32px;
+            transform: translateX(-100%);
+            transition: transform .3s ease;
+            z-index: 100;
+        }
+        
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        
+        .sidebar a {
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: var(--ink);
+            font-size: 14px;
+        }
+        
+        .sidebar-dropdown {
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-toggle {
+            all: unset;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 8px 0;
+            color: var(--ink);
+        }
+        
+        .sidebar-toggle span {
+            opacity: .5;
+        }
+        
+        .sidebar-sub {
+            display: none;
+            padding-left: 12px;
+            margin-top: 8px;
+        }
+        
+        .sidebar-sub a {
+            display: block;
+            font-size: 13px;
+            opacity: .7;
+            margin-bottom: 12px;
+        }
+        /* mở dropdown */
+        
+        .sidebar-dropdown.active .sidebar-sub {
+            display: block;
+        }
+        /* Overlay */
+        
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(30, 63, 63);
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s;
+            z-index: 90;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .overlay.active {
+            display: block
+        }
+        
+        .overlay.active {
+            display: block
+        }
+        /* ===== MAIN LAYOUT ===== */
+        
+        .main {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            align-items: center;
+        }
+        
+        .left {
+            padding-top: 40px
+        }
+        
+        .credit {
+            font-size: 12px;
+            opacity: .5;
+            margin-bottom: 32px;
+        }
+        
+        .title {
+            font-size: 88px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 32px;
+        }
+        
+        .desc {
+            font-size: 14px;
+            line-height: 1.7;
+            opacity: .7;
+            max-width: 340px;
+            margin-bottom: 36px;
+        }
+        
+        .desc::after {
+            content: "|";
+            margin-left: 2px;
+            animation: blink 1s infinite;
+            opacity: .6;
+        }
+        
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1
+            }
+            50.01%,
+            100% {
+                opacity: 0
+            }
+        }
+        
+        .stats {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: .6;
+        }
+        
+        .cta {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #1e3f3f;
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .right {
+            position: relative;
+            height: 100%;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .about-box h4 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .about-box p {
+            font-size: 13px;
+            line-height: 1.7;
+            opacity: .7;
+            max-width: 320px;
+        }
+        
+        .timeline {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .timeline li {
+            font-size: 13px;
+            opacity: .65;
+            margin-bottom: 10px;
+        }
+        /* ảnh chung */
+        
+        .hero-img {
+            position: absolute;
+            object-fit: contain;
+        }
+        /* từng ảnh tự do hoàn toàn */
+        
+        .car {
+            width: 420px;
+            right: 40px;
+            bottom: 40px;
+        }
+        
+        .box {
+            width: 220px;
+            right: 380px;
+            bottom: 60px;
+            opacity: .85;
+        }
+        /* ===== FOOTER ===== */
+        
+        footer {
+            margin-top: auto;
+            border-top: 1px solid rgba(30, 63, 63);
+            padding: 32px 56px;
+            font-size: 13px;
+        }
+        
+        .footer-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        
+        .footer-brand {
+            max-width: 260px;
+        }
+        
+        .footer-brand strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: inherit;
+            opacity: .6;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1
+        }
+        /* ===== FOOTER RWD FIX ===== */
+        
+        @media (max-width: 767px) {
+            footer {
+                padding: 24px 16px;
+                /* gọn lại cho mobile */
+            }
+            .footer-wrap {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+            .footer-links {
+                width: 100%;
+                flex-wrap: wrap;
+                /* 👈 QUAN TRỌNG */
+                
+                gap: 16px 24px;
+            }
+            .footer-links a {
+                font-size: 13px;
+            }
+        }
+        
+        .copyright {
+            margin-top: 16px;
+            font-size: 12px;
+            opacity: .45;
+        }
+        
+        @media(max-width:1024px) {
+            .main {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .right {
+                display: flex;
+                /* HIỆN LẠI */
+                
+                padding: 0;
+            }
+            .title {
+                font-size: 64px
+            }
+        }
+        /* ===== RESPONSIVE ===== */
+        
+        @media(min-width:768px) {
+            .menu-toggle {
+                display: none
+            }
+            .sidebar,
+            .overlay {
+                display: none
+            }
+        }
+        
+        @media(max-width:767px) {
+            .menu, .icons {
+                display: none
+            }
+            .menu-toggle {
+                display: block
+            }
+        }
+        
+        .nav-search {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-search input {
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, .25);
+            background: transparent;
+            padding: 6px 4px;
+            font-size: 13px;
+            font-family: inherit;
+            color: var(--ink);
+            width: 140px;
+            outline: none;
+        }
+        
+        .nav-search input::placeholder {
+            color: rgba(0, 0, 0, .4);
+        }
+        
+        .nav-search input:focus {
+            border-bottom-color: var(--ink);
+        }
+        
+        .search-icon {
+            font-size: 30px;
+            opacity: .5;
+            margin-right: 6px;
+        }
+        /* ===== MOBILE STABILITY FIX ===== */
+        
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            .hero {
+                padding: 24px 20px;
+            }
+            .main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            /* khóa size chữ */
+            
+            .title {
+                font-size: 42px;
+                line-height: 1.05;
+            }
+            .desc {
+                max-width: 100%;
+                font-size: 13px;
+            }
+            /* stats không tràn */
+            
+            .stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .stat-item {
+                width: 45%;
+            }
+            .stat-number {
+                font-size: 22px;
+            }
+            /* right không phình */
+            
+            .right {
+                padding: 0;
+                gap: 24px;
+            }
+            .about-box p,
+            .timeline li {
+                font-size: 12px;
+            }
+            iframe {
+                max-width: 100%;
+            }
+        }
+        /* =============================
+   ABOUT BODY – STRICT LAYOUT
+============================= */
+        
+        .about-layout {
+            padding: 80px 0;
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .about-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        /* TOP GRID */
+        
+        .about-top {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr;
+            gap: 24px;
+        }
+        /* COMMON */
+        
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        /* TRAINER */
+        
+        .trainer-card {
+            border: 3px solid #1e3f3f;
+            padding: 20px;
+            background-color: #dddcd8;
+        }
+        
+        .trainer-body {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .trainer-avatar {
+            width: 140px;
+            height: 180px;
+            object-fit: cover;
+            border: 2px solid #1e3f3f;
+        }
+        
+        .trainer-name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .trainer-mail {
+            font-size: 13px;
+            opacity: .7;
+        }
+        
+        .trainer-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 12px 0;
+        }
+        
+        .trainer-stats div {
+            border: 2px solid #1e3f3f;
+            padding: 6px;
+            text-align: center;
+            background-color: #697c69;
+        }
+        
+        .trainer-stats strong {
+            display: block;
+            font-size: 18px;
+        }
+        
+        .trainer-desc {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .trainer-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        
+        .trainer-actions button {
+            padding: 6px 14px;
+            border: 2px solid #1e3f3f;
+            background: #dddcd8;
+            color: #1e3f3f;
+            cursor: pointer;
+        }
+        
+        .trainer-actions .dark {
+            background: #1e3f3f;
+            color: #fff;
+        }
+        /* WORK */
+        
+        .work-card {
+            border: 3px solid #1e3f3f;
+            padding: 20px;
+            background-color: #dddcd8;
+        }
+        
+        .work-item {
+            border: 2px solid #1e3f3f;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #697c69;
+        }
+        
+        .work-item span {
+            font-size: 12px;
+            opacity: .6;
+        }
+        /* REVIEWS */
+        
+        .review-card {
+            border: 3px solid #1e3f3f;
+            padding: 20px;
+            background-color: #dddcd8;
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .review-header button {
+            border: 2px solid #1e3f3f;
+            background: #fff;
+            padding: 4px 10px;
+        }
+        
+        .review-grid {
+            display: grid;
+            grid-template-columns: 1.2fr repeat(3, 1fr);
+            gap: 16px;
+        }
+        
+        .review-summary,
+        .review-item {
+            border: 2px solid #1e3f3f;
+            padding: 12px;
+            font-size: 13px;
+            text-align: center;
+            background-color: #697c69;
+        }
+        
+        @media (max-width: 1024px) {
+            .about-top {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .trainer-body {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .trainer-avatar {
+                width: 120px;
+                height: 150px;
+            }
+            .trainer-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .review-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            /* Facebook chiếm full hàng trên tablet */
+            
+            .review-summary {
+                grid-column: 1 / -1;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .about-layout {
+                padding: 48px 16px;
+            }
+            .card-title {
+                font-size: 18px;
+            }
+            /* TRAINER */
+            
+            .trainer-card {
+                padding: 16px;
+            }
+            .trainer-avatar {
+                width: 100%;
+                height: 200px;
+            }
+            .trainer-name {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .trainer-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .trainer-stats strong {
+                font-size: 16px;
+            }
+            .trainer-actions {
+                flex-wrap: wrap;
+            }
+            .trainer-actions button {
+                flex: 1;
+                text-align: center;
+            }
+            /* WORK */
+            
+            .work-card {
+                padding: 16px;
+            }
+            .work-item {
+                font-size: 13px;
+            }
+            /* REVIEWS */
+            
+            .review-card {
+                padding: 16px;
+            }
+            .review-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .review-summary,
+            .review-item {
+                font-size: 12px;
+            }
+            /* Facebook iframe fix */
+            
+            .fb-wrap iframe {
+                max-width: 100% !important;
+            }
+        }
+        
+        .link-dark1 {
+            color: #1e3f3f;
+        }
+        
+        .neon-hover {
+            font-weight: 600;
+            color: #1e3f3f;
+            cursor: pointer;
+            transition: color 0.25s ease;
+        }
+        /* hover bật neon */
+        
+        .neon-hover:hover {
+            color: #4ccfc1;
+            /* neon teal */
+            
+            text-shadow: 0 0 3px rgba(76, 207, 193, 0.4), 0 0 6px rgba(76, 207, 193, 0.25);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <a href="home.html">Trang chủ</a>
+        <div class="sidebar-dropdown">
+            <button class="sidebar-toggle" onclick="toggleSidebarDropdown(this)">
+                Bộ sưu tập <i class="bi bi-caret-down-fill"></i><span>▾</span>
+            </button>
+            <div class="sidebar-sub">
+                <a href="bst-hw.html">Hotwheels</a>
+                <a href="bst-tmc.html">Tomica</a>
+                <a href="bst-mjr.html">Majorette</a>
+                <a href="bst-p-race.html">Poprace</a>
+                <a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+            </div>
+        </div>
+
+        <div class="sidebar-dropdown">
+            <button class="sidebar-toggle" onclick="toggleSidebarDropdown(this)">
+      Shop <i class="bi bi-caret-down-fill"></i><span>▾</span>
+    </button>
+            <div class="sidebar-sub">
+                <a href="sale-bst.html">Bán</a>
+                <a href="tl-bst.html">Thanh lý</a>
+                <a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+            </div>
+        </div>
+        <a href="contact-bst.html">Contact</a>
+        <a href="#">About</a>
+    </div>
+
+    <section class="hero">
+
+        <!-- NAVBAR -->
+        <div class="nav">
+            <div class="logo" style="font-size: larger;">
+                <a href="home.html"><img src="img\SGRACE\avt2.png" alt="logo" width="100" class="me-2">
+                </a>
+            </div>
+
+            <div class="menu">
+                <a href="home.html">Trang chủ</a>
+
+                <div class="dropdown">
+                    <a href="#">Bộ sưu tập ▾</a>
+                    <div class="dropdown-content">
+                        <a href="bst-hw.html">Hotwheels</a>
+                        <a href="bst-tmc.html">Tomica</a>
+                        <a href="bst-mjr.html">Majorette</a>
+                        <a href="bst-p-race.html">Poprace</a>
+                        
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#">Shop ▾</a>
+                    <div class="dropdown-content">
+                        <a href="sale-bst.html">Bán</a>
+                <a href="tl-bst.html">Thanh lý</a>
+                <a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+                    </div>
+                </div>
+                <a href="contact-bst.html">Contact</a>
+                <a href="about-bst.html">About</a>
+            </div>
+
+            <div>
+
+                <form class="nav-search" action="https://www.google.com/search" method="GET" target="_blank">
+                    <span class="search-icon">⌕</span>
+                    <input type="text" name="q" placeholder="Search Google…" required />
+                </form>
+
+            </div>
+
+
+            <div class="menu-toggle" style="font-size: xx-large;" onclick="toggleMenu()">☰</div>
+        </div>
+
+
+        <section class="about-layout">
+            <div class="about-wrap">
+
+                <!-- TOP -->
+                <div class="about-top">
+
+                    <!-- TRAINER INFO -->
+                    <div class="trainer-card">
+                        <h3 class="card-title">Tác giả</h3>
+
+                        <div class="trainer-body">
+                            <img class="trainer-avatar" onclick="toggleAudio()" src="img\0bd462c6-4dda-4c87-8e1e-dc0c81ed4df1[2].image.png" alt="trainer" title="đếch quan tâm 🤣.">
+
+                            <div class="trainer-info">
+                                <div class="trainer-name">
+                                    <strong title="SV TKĐH Cao Đẳng FPT POLYTECHNIC." class="neon-hover">Huynh Pham Vinh An</strong>
+                                    <div class="icons">
+                                        <a href="https://www.facebook.com/vinhan.huynhpham.1" class="link-dark"><i class="bi bi-facebook link-dark1"></i></a>
+                                        <a href="https://www.instagram.com/vinh_an_huynh_pham_001/" class="link-dark"><i class="bi bi-instagram link-dark1"></i></a>
+                                        <a href="https://zalo.me/0944835045" class="link-dark"><i class="bi bi-telephone-fill link-dark1"></i></a>
+
+                                    </div>
+                                </div>
+
+                                <p class="trainer-mail">vinhanhuynhpham@email.com</p>
+
+
+                                <div class="trainer-stats">
+                                    <div><strong>+3</strong><span>Năm</span>
+                                    </div>
+                                    <div><strong>#1</strong><span>lưu trữ</span>
+                                    </div>
+                                    <div><strong>59</strong><span>Tổng số xe trong BST </span>
+                                    </div>
+                                    <div><strong>5</strong><span>brands đang sưu tập</span>
+                                    </div>
+                                </div>
+
+                                <p class="trainer-desc">
+                                    Sinh viên chuyên ngành TKĐH [Cao Đẳng FPT POLYTECHNIC]
+                                </p>
+
+                                <div class="trainer-actions">
+                                    <button class="dark" onclick="location.href='contact-bst.html'">Contact</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WORK EXPERIENCE -->
+                    <div class="work-card">
+                        <h3 class="card-title">Hành trình</h3>
+
+                        <div class="work-item">
+                            <strong>Bắt đầu sưu tập</strong>
+                            <span>2023 – nay</span>
+                        </div>
+
+                        <div class="work-item">
+                            <strong>Đưa lên web</strong>
+                            <span>2024</span>
+                        </div>
+
+                        <div class="work-item">
+                            <strong>Tạo Saigon Race</strong>
+                            <span>2024 - nay</span>
+                        </div>
+
+                        <div class="work-item">
+                            <strong>Coming soon...</strong>
+                            <span>None</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- REVIEWS -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <h3>Thông tin phụ</h3>
+
+                    </div>
+
+                    <div class="review-grid">
+
+                        <!-- FACEBOOK PAGE = CỘT 1 -->
+                        <div class="review-summary fb-wrap">
+                            <div id="fb-root"></div>
+                            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v24.0&appId=APP_ID"></script>
+                            <div class="fb-page" data-href="https://www.facebook.com/saigonrace" data-tabs="" data-width="400" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/saigonrace" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/saigonrace">Saigon RACE</a>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <!-- REVIEW 2 -->
+                        <div class="review-item">
+                            <strong>Bản Update</strong>
+                            <span>▲ 1.1</span>
+                            <p>update lần cuối vào 14/01/2026</p>
+                        </div>
+
+                        <!-- REVIEW 3 -->
+                        <div class="review-item">
+                            <strong>Triển khai</strong>
+                            <span>netlify</span>
+                            <p>None.</p>
+                        </div>
+
+                        <!-- REVIEW 4 -->
+                        <div class="review-item">
+                            <strong>Khác</strong>
+                            <span>★ </span>
+                            <p>None.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+    </section>
+
+    <audio id="warningSound" preload="auto">
+        <source src="audio\MỘNG CHIỀU XUÂN _ Sáng tác_ Ngọc Bích _ Nhạc Xuân Xưa Trước 1975 [4uZPym0Hcm0].mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        let isPlaying = false;
+
+        function toggleAudio() {
+            const audio = document.getElementById("warningSound");
+
+            if (isPlaying) {
+                audio.pause();
+
+            } else {
+                audio.play().catch(err => {
+                    console.log("Audio play bị chặn:", err);
+                });
+            }
+
+            isPlaying = !isPlaying;
+        }
+    </script>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-wrap">
+            <div class="footer-brand">
+                <strong style="font-size: medium;">Saigon Race</strong> 1:64 Die-cast Collection · bộ sưu tập xe mô hình 1:64
+                <div class="copyright">
+                    © 2024 Saigon Race.
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://www.facebook.com/vinhan.huynhpham.1">Facebook</a>
+                <a href="https://www.instagram.com/vinh_an_huynh_pham_001/">Instagram</a>
+                <a href="https://zalo.me/0944835045">Zalo</a>
+                <a href="contact-bst.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow =
+                sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        overlay.addEventListener('click', toggleMenu);
+    </script>
+
+    <script>
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function toggleDropdown(e) {
+            e.preventDefault();
+            e.currentTarget.nextElementSibling.classList.toggle('show');
+        }
+
+        overlay.onclick = toggleMenu;
+    </script>
+    <script>
+        const el = document.getElementById('typewriter');
+        const text = el.dataset.text;
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                el.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 28); // tốc độ gõ
+            }
+        }
+
+        type();
+    </script>
+    <script>
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function toggleSidebarDropdown(btn) {
+            btn.parentElement.classList.toggle('active');
+        }
+
+        overlay.onclick = toggleMenu;
+    </script>
+    <script>
+        const counters = document.querySelectorAll('.stat-number');
+
+        counters.forEach(counter => {
+            const target = +counter.dataset.target;
+            let current = 0;
+            const step = Math.ceil(target / 60);
+
+            const update = () => {
+                current += step;
+                if (current < target) {
+                    counter.textContent = current;
+                    requestAnimationFrame(update);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+
+            update();
+        });
+    </script>
+    <script src="https://cdn.counter.dev/script.js" data-id="f457645d-3cd5-4919-8a2f-f3d87d6234f1" data-utcoffset="7"></script>
+    <script src="https://plugin-code.salesmartly.com/js/project_514093_530078_1761838458.js"></script>
+</body>
+
+</html>

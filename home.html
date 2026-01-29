@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="bOA04aZzE0Dfyl51Csl9tyfzBsd1rOqKH0-POO8LByI" />
+  <title>HPVA_Saigon race Collectibles_Trang chủ</title>
+  <link rel="icon" href="img\SGRACE\Thiết kế chưa có tên.png" type="image/png" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    :root{
+      --ink:#1e3f3f;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      color:var(--ink);
+      background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Cline x1="0" y1="0" x2="0" y2="40" stroke="%23ccc" stroke-width="1" /%3E%3Cline x1="0" y1="0" x2="40" y2="0" stroke="%23ccc" stroke-width="1" /%3E%3C/svg%3E') repeat;
+      
+      /* để footer dính đáy khi trang ngắn */
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* ===== FULL BROWSER HERO ===== */
+    .hero{
+      min-height:100vh;
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      padding:32px 56px;
+    }
+
+    /* ===== NAVBAR ===== */
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:13px;
+}
+
+.logo{font-weight:700}
+
+.menu{
+  display:flex;
+  gap:32px;
+}
+
+.menu a{
+  text-decoration:none;
+  color:inherit;
+  opacity:.65;
+  position:relative;
+}
+
+.dropdown{
+  position:relative;
+}
+
+.dropdown > a{
+  display:inline-block;
+  padding-bottom:8px; /* tạo vùng hover đệm */
+}
+
+.dropdown-content{
+  position:absolute;
+  top:100%;
+  left:0;
+  background-color: #e3e2de;
+  border:1px solid rgba(0,0,0,.1);
+  padding:12px 0;
+  min-width:160px;
+  display:none;
+  z-index:10;
+}
+
+/* MỞ DROPDOWN KHI HOVER CẢ KHỐI */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover{
+  display:block;
+}
+
+.dropdown-content a{
+  display:block;
+  padding:8px 20px;
+  text-decoration:none;
+  color:inherit;
+  white-space:nowrap;
+}
+
+.dropdown-content a:hover{
+  background:rgba(0,0,0,.04);
+}
+
+
+/* ===== MAIN ===== */
+.main{
+  flex:1;
+  display:grid;
+  grid-template-columns:460px 1fr;
+  align-items:center;
+}
+
+.title{
+  font-size:88px;
+  font-weight:700;
+  line-height:1;
+}
+
+/* ===== SIDEBAR (MOBILE ONLY) ===== */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:260px;
+  height:100vh;
+  background-color: #e3e2de;
+  padding:32px;
+  transform:translateX(-100%);
+  transition:transform .3s ease;
+  z-index:100;
+}
+
+.sidebar.active{
+  transform:translateX(0);
+}
+
+.sidebar a{
+  display:block;
+  margin-bottom:20px;
+  text-decoration:none;
+  color:var(--ink);
+  font-size:14px;
+}
+
+.sidebar-dropdown{
+  margin-bottom:20px;
+}
+
+.sidebar-toggle{
+  all:unset;
+  cursor:pointer;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  padding:8px 0;
+  color:var(--ink);
+}
+
+.sidebar-toggle span{
+  opacity:.5;
+}
+
+.sidebar-sub{
+  display:none;
+  padding-left:12px;
+  margin-top:8px;
+}
+
+.sidebar-sub a{
+  display:block;
+  font-size:13px;
+  opacity:.7;
+  margin-bottom:12px;
+}
+
+/* mở dropdown */
+.sidebar-dropdown.active .sidebar-sub{
+  display:block;
+}
+
+
+/* Overlay */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(30, 63, 63);
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:90;
+}
+
+.overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.overlay.active{display:block}
+.overlay.active{display:block}
+    
+
+
+/* ===== INFO PANEL ===== */
+/* ===== INFO PANEL ===== */
+.sgr-info-panel{
+  margin:56px 0 0;
+  padding:0 56px;                 /* 👈 BẰNG HERO / NAV */
+
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap:48px;
+
+  align-items:center;
+  font-family:'Space Mono', monospace;
+}
+
+
+/* ===== LEFT ===== */
+.sgr-info-title{
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:.5px;
+  margin-bottom:16px;
+  color:#1e3f3f;
+}
+
+.sgr-info-desc{
+  font-size:14px;
+  line-height:1.7;
+  max-width:420px;
+  opacity:.8;
+  margin-bottom:28px;
+}
+
+/* ===== STATS ===== */
+.sgr-info-stats{
+  display:grid;
+  grid-template-columns: repeat(6, minmax(40px, 1fr));
+  gap:16px;
+}
+
+.sgr-info-stats div{
+  text-align:left;
+}
+
+.sgr-info-stats strong{
+  font-size:18px;
+  display:block;
+}
+
+.sgr-info-stats span{
+  font-size:11px;
+  opacity:.6;
+}
+
+/* ===== RIGHT ===== */
+.sgr-info-right{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.sgr-info-right img{
+  max-width:100%;
+  height:auto;
+  opacity:.85;
+}
+
+@media (max-width:768px){
+
+  .sgr-info-panel{
+    grid-template-columns:1fr;
+    justify-items:center;
+  }
+
+  .sgr-info-right{
+    display:none;
+  }
+
+  .sgr-info-left{
+    max-width:520px;
+  }
+
+  .sgr-info-stats{
+    transform:scale(0.85);
+    transform-origin:left top;
+  }
+}
+
+
+.sgr-typing{
+  font-size:22px;
+  font-weight:700;
+  margin:0;
+  color:#1e3f3f;
+
+  white-space:normal;      /* ⬅ cho phép xuống dòng */
+  word-break:break-word;  /* ⬅ tránh tràn */
+  line-height:1.4;
+}
+
+
+.typing-cursor{
+  display:inline-block;
+  width:4px;
+  height:1em;
+  margin-left:2px;
+
+  background:#1e3f3f;
+
+  vertical-align:baseline;   /* ⬅ CHÌA KHOÁ */
+  animation:blink 1s steps(1) infinite;
+}
+
+
+@keyframes blink{
+  50%{opacity:0}
+}
+
+    /* ===== FOOTER ===== */
+    footer{
+      margin-top:auto;
+      border-top:1px solid rgba(30, 63, 63);
+      padding:32px 56px;
+      font-size:13px;
+    }
+
+    .footer-wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:40px;
+    }
+
+    .footer-brand{
+      max-width:260px;
+    }
+
+    .footer-brand strong{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:32px;
+    }
+
+    .footer-links a{
+      text-decoration:none;
+      color:inherit;
+      opacity:.6;
+    }
+
+    .footer-links a:hover{opacity:1}
+
+    .copyright{
+      margin-top:16px;
+      font-size:12px;
+      opacity:.45;
+    }
+
+    @media(max-width:1024px){
+      .main{grid-template-columns:1fr}
+      .right{display:none}
+      .title{font-size:64px}
+
+      footer{padding:24px}
+      .footer-wrap{flex-direction:column}
+    }
+    /* ===== RESPONSIVE ===== */
+@media(min-width:768px){
+  .menu-toggle{display:none}
+  .sidebar,
+  .overlay{display:none}
+}
+
+@media(max-width:767px){
+  .menu,
+  .icons{display:none}
+  .menu-toggle{display:block}
+}
+
+.nav-search{
+  display:flex;
+  align-items:center;
+}
+
+.nav-search input{
+  border:none;
+  border-bottom:1px solid rgba(0,0,0,.25);
+  background:transparent;
+  padding:6px 4px;
+  font-size:13px;
+  font-family:inherit;
+  color:var(--ink);
+  width:140px;
+  outline:none;
+}
+
+.nav-search input::placeholder{
+  color:rgba(0,0,0,.4);
+}
+
+.nav-search input:focus{
+  border-bottom-color:var(--ink);
+}
+
+.search-icon{
+  font-size:30px;
+  opacity:.5;
+  margin-right:6px;
+}
+
+/* ===== MOBILE STABILITY FIX ===== */
+@media (max-width:768px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .hero{
+    padding:24px 20px;
+  }
+
+  .main{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  /* khóa size chữ */
+  .title{
+    font-size:42px;
+    line-height:1.05;
+  }
+
+  .desc{
+    max-width:100%;
+    font-size:13px;
+  }
+
+  /* stats không tràn */
+  .stats{
+    flex-wrap:wrap;
+    gap:20px;
+  }
+
+  .stat-item{
+    width:45%;
+  }
+
+  .stat-number{
+    font-size:22px;
+  }
+
+  /* right không phình */
+  .right{
+    padding:0;
+    gap:24px;
+  }
+
+  .about-box p,
+  .timeline li{
+    font-size:12px;
+  }
+
+  iframe{
+    max-width:100%;
+  }
+}
+
+/* ===== SAIGON RACE LCD ZONE ===== */
+.sgr-lcd{
+  margin:48px 0 32px;
+  padding:0 56px;          /* desktop giống hero / nav */
+  max-width:none;          /* full width */
+  font-family:'Space Mono', monospace;
+}
+
+/* mobile */
+@media (max-width:768px){
+  .sgr-lcd{
+    margin:28px 0 20px;
+    padding:0 20px;        /* 👈 thu gọn giống nav mobile */
+  }
+}
+
+
+
+/* ===== LCD FRAME ===== */
+.sgr-lcd-frame{
+  position:relative;
+  border:2px solid #1e3f3f;
+  border-radius:4px;
+
+  padding:40px 32px;     /* tăng padding cho thoáng */
+  min-height:260px;      /* 👈 CHIỀU CAO BẢNG CHÍNH */
+
+  background:#f1f8f7;
+  overflow:hidden;
+}
+
+
+
+/* background image */
+.sgr-lcd-frame::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("img/SGRACE/decal2.png") center / cover;
+  opacity:.45;
+  z-index:0;
+}
+
+/* grid overlay */
+.sgr-lcd-frame{
+  position:relative;
+  border:2px solid #1e3f3f;
+  border-radius:4px;
+  padding:32px 28px;
+
+  min-height:300px;   /* 👈 TĂNG CHIỀU CAO Ở ĐÂY */
+
+  background:#f1f8f7;
+  overflow:hidden;
+}
+
+
+.sgr-lcd-frame > *{
+  position:relative;
+  z-index:2;
+}
+
+/* ===== REC LABEL ===== */
+.sgr-rec-label{
+  position:absolute;
+  top:10px;
+  left:14px;
+  font-size:13px;
+  font-weight:700;
+  color:#1e3f3f;
+  background:rgba(255,255,255,.5);
+  padding:2px 6px;
+  border-radius:3px;
+}
+
+/* ===== CLOCK ===== */
+.sgr-clock{
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:16px;
+  color:#1e3f3f;
+}
+
+/* ===== TYPING TEXT ===== */
+
+
+/* ===== ANNOUNCEMENT ===== */
+.sgr-announce{
+  margin-top:0px;
+  border:2px solid #1e3f3f;
+  border-radius:4px;
+  background:#f1f8f7;
+  overflow:hidden;
+  height:32px;
+  display:flex;
+  align-items:center;
+}
+
+.sgr-announce span{
+  display:inline-block;
+  padding-left:100%;
+  white-space:nowrap;
+  animation:sgr-scroll 22s linear infinite;
+  font-size:13px;
+  color:#1e3f3f;
+}
+
+.sgr-announce i{
+  margin-right:8px;
+}
+
+.sgr-announce a{
+  color:#1e3f3f;
+  text-decoration:underline;
+}
+
+/* ===== SCROLL ANIMATION ===== */
+@keyframes sgr-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .sgr-lcd{margin:32px auto 24px}
+  .sgr-lcd-frame{padding:24px 20px}
+  .sgr-typing{font-size:18px}
+  .sgr-announce{height:28px}
+}
+
+
+
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="#">Trang chủ</a>
+
+  <div class="sidebar-dropdown">
+    <button class="sidebar-toggle" onclick="toggleSidebarDropdown(this)">
+      Bộ sưu tập <i class="bi bi-caret-down-fill"></i><span>▾</span>
+    </button>
+    <div class="sidebar-sub">
+      <a href="bst-hw.html">Hotwheels</a>
+                        <a href="bst-tmc.html">Tomica</a>
+                        <a href="bst-mjr.html">Majorette</a>
+                        <a href="bst-p-race.html">Poprace</a>
+<a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+    </div>
+  </div>
+
+  <div class="sidebar-dropdown">
+            <button class="sidebar-toggle" onclick="toggleSidebarDropdown(this)">
+      Shop <i class="bi bi-caret-down-fill"></i><span>▾</span>
+    </button>
+            <div class="sidebar-sub">
+                <a href="sale-bst.html">Bán</a>
+                <a href="tl-bst.html">Thanh lý</a>
+                <a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+            </div>
+        </div>
+  <a href="contact-bst.html">Contact</a>
+  <a href="about-bst.html">About</a>
+</div>
+
+<section class="hero">
+
+  <!-- NAVBAR -->
+  <div class="nav">
+    <div class="logo" style="font-size: larger;"><a href="#"><img src="img\SGRACE\avt2.png" alt="logo" width="100" class="me-2"></a></div>
+
+    <div class="menu">
+      <a href="#">Trang chủ</a>
+
+      <div class="dropdown">
+        <a href="#">Bộ sưu tập ▾</a>
+        <div class="dropdown-content">
+          <a href="bst-hw.html">Hotwheels</a>
+                        <a href="bst-tmc.html">Tomica</a>
+                        <a href="bst-mjr.html">Majorette</a>
+                        <a href="bst-p-race.html">Poprace</a>
+<a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+                    <a href="#">Shop ▾</a>
+                    <div class="dropdown-content">
+                        <a href="sale-bst.html">Bán</a>
+                <a href="tl-bst.html">Thanh lý</a>
+                <a href="https://docs.google.com/spreadsheets/d/1VrywcS-HlmKHSEtWk7kA7-ZZyxMc9CjTkAMhlpKvMdw/edit?usp=sharing">Bảng đánh giá</a>
+                    </div>
+                </div>
+      <a href="contact-bst.html">Contact</a>
+      <a href="about-bst.html">About</a>
+    </div>
+
+    <div >
+  
+  <form class="nav-search" action="https://www.google.com/search" method="GET" target="_blank">
+  <span class="search-icon">⌕</span>
+    <input 
+    type="text" 
+    name="q" 
+    placeholder="Search Google…" 
+    required
+  />
+</form>
+
+</div>
+
+
+    <div class="menu-toggle" style="font-size: xx-large;" onclick="toggleMenu()">☰</div>
+  </div>
+
+
+  
+
+    <br>
+<section class="sgr-lcd container">
+
+  <div class="sgr-lcd-frame">
+    <span class="sgr-rec-label">● SAIGON_RACE</span>
+    <br>
+    <div class="sgr-clock" id="clock">00:00:00</div>
+
+    <h1 class="sgr-typing" id="typewriter">
+</h1>
+  </div>
+
+  <div class="sgr-announce">
+    <span>
+      <i class="bi bi-megaphone-fill"></i>
+      Thông báo update: bạn có thể liên hệ mua xe qua thông tin liên hệ tại page 
+      <a href="about-bst.html"><b>About</b></a>.
+      ● để đảm bảo an toàn khi mua bạn có thể được xem trực tiếp sản phẩm trước khi quyết định và thanh toán! ● giao diện luôn được chỉnh sửa để đem đến trải nghiệm tốt cho người truy cập và cảm ơn bạn đã vào xem bst của mình!
+    </span>
+  </div>
+
+</section>
+  <section class="sgr-info-panel container">
+
+  <div class="sgr-info-left">
+    <h2 class="sgr-info-title">SAIGON RACE <b style="font-size: medium;">là gì?</b></h2>
+
+    <p class="sgr-info-desc">
+      Saigon Race Collectibles là bộ sưu tập xe mô hình cá nhân,
+      tập trung vào diecast, chủ yếu show xe là chính và trong định hướng tới sẽ bao gồm thanh lý xe cũ và bán sản phẩm mới (nhập hàng về).
+    </p>
+
+    <div class="sgr-info-stats">
+      <div><strong>59</strong><span>Tổng</span></div>
+      <div><strong>43</strong><span>HW</span></div>
+      <div><strong>8</strong><span>TMC</span></div>
+      <div><strong>7</strong><span>MJR</span></div>
+      <div><strong>1</strong><span>P.Race</span></div>
+      <div><strong>3</strong><span>Bán</span></div>
+    </div>
+  </div>
+
+  <div class="sgr-info-right">
+    <img src="img\SGRACE\card hw.png" alt="collection illustration">
+  </div>
+
+</section>
+
+
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-brand">
+      <strong style="font-size: medium;">Saigon Race</strong>
+      1:64 Die-cast Collection · bộ sưu tập xe mô hình 1:64
+      <div class="copyright">
+        © 2024 Saigon Race.
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://www.facebook.com/vinhan.huynhpham.1">Facebook</a>
+<a href="https://www.instagram.com/vinh_an_huynh_pham_001/">Instagram</a>
+<a href="https://zalo.me/0944835045">Zalo</a>
+<a href="contact-bst.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script>
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
+function toggleMenu(){
+  sidebar.classList.toggle('active');
+  overlay.classList.toggle('active');
+  document.body.style.overflow =
+    sidebar.classList.contains('active') ? 'hidden' : '';
+}
+
+overlay.addEventListener('click', toggleMenu);
+</script>
+
+<script>
+function toggleMenu(){
+  sidebar.classList.toggle('active');
+  overlay.classList.toggle('active');
+}
+
+function toggleDropdown(e){
+  e.preventDefault();
+  e.currentTarget.nextElementSibling.classList.toggle('show');
+}
+
+overlay.onclick = toggleMenu;
+</script>
+<script>
+const text = "Chào mừng bạn đến xem bộ sưu tập của tôi";
+
+const holidays = [
+  { date: '01-01', message: 'Chúc Mừng Năm Mới!' },
+  { date: '07-05', message: 'Kỷ niệm Chiến thắng Điện Biên Phủ (07-05-1954)' },
+  { date: '30-04', message: 'Chúc Mừng Ngày Giải Phóng Miền Nam!' },
+  { date: '01-05', message: 'Chúc Mừng Ngày Quốc Tế Lao Động!' },
+  { date: '19-05', message: 'Kỷ niệm ngày sinh Chủ tịch Hồ Chí Minh (19-05-1890)' },
+  { date: '02-09', message: 'Chúc Mừng Ngày Quốc Khánh nước CHXHCN Việt Nam!' },
+  { date: '25-12', message: 'Chúc Mừng Giáng Sinh!' }
+];
+
+const typingEl = document.getElementById("typewriter");
+
+if (!typingEl) {
+  console.warn("❌ Không tìm thấy #typewriter");
+} else {
+
+  /* cursor */
+  const cursor = document.createElement("span");
+  cursor.className = "typing-cursor";
+  typingEl.appendChild(cursor);
+
+  /* date */
+  const now = new Date();
+  const day = String(now.getDate()).padStart(2, '0');
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const year = now.getFullYear();
+  const todayKey = `${day}-${month}`;
+
+  const holiday = holidays.find(h => h.date === todayKey);
+
+  const finalText = holiday
+    ? `${text} - ${holiday.message}`
+    : `${text} - Hôm nay là ngày ${day}/${month}/${year}. chúc bạn may mắn!`;
+
+  let i = 0;
+
+  function typeChar() {
+    if (i < finalText.length) {
+      typingEl.insertBefore(
+        document.createTextNode(finalText[i]),
+        cursor
+      );
+      i++;
+      setTimeout(typeChar, 80);
+    }
+  }
+
+  typeChar();
+}
+</script>
+
+
+<script>
+function toggleMenu(){
+  sidebar.classList.toggle('active');
+  overlay.classList.toggle('active');
+}
+
+function toggleSidebarDropdown(btn){
+  btn.parentElement.classList.toggle('active');
+}
+
+overlay.onclick = toggleMenu;
+</script>
+<script>
+const counters = document.querySelectorAll('.stat-number');
+
+counters.forEach(counter=>{
+  const target = +counter.dataset.target;
+  let current = 0;
+  const step = Math.ceil(target / 60);
+
+  const update = ()=>{
+    current += step;
+    if(current < target){
+      counter.textContent = current;
+      requestAnimationFrame(update);
+    }else{
+      counter.textContent = target;
+    }
+  };
+
+  update();
+});
+</script>
+<script>
+    function updateClock() {
+            const clockElement = document.getElementById('clock');
+            // Lấy giờ hiện tại theo múi giờ Việt Nam (GMT+7)
+            const now = new Date();
+            const utcOffset = now.getTimezoneOffset() * 60000; // Chuyển phút lệch UTC thành mili giây
+            const vietnamTime = new Date(now.getTime() + utcOffset + 7 * 3600000);
+            const hours = vietnamTime.getHours().toString().padStart(2, '0');
+            const minutes = vietnamTime.getMinutes().toString().padStart(2, '0');
+            const seconds = vietnamTime.getSeconds().toString().padStart(2, '0');
+            // Cập nhật thời gian vào phần tử đồng hồ
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        // Gọi hàm cập nhật đồng hồ mỗi giây
+    setInterval(updateClock, 1000);
+    // Cập nhật ngay khi trang được tải
+    updateClock();
+</script>
+
+<script src="https://cdn.counter.dev/script.js" data-id="f457645d-3cd5-4919-8a2f-f3d87d6234f1" data-utcoffset="7"></script>
+<script src="https://plugin-code.salesmartly.com/js/project_514093_530078_1761838458.js"></script>
+</body>
+</html>
